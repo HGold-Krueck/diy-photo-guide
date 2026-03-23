@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIY Photo Guide</title>
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- The Import Map tells the browser how to resolve bare module specifiers like 'react' -->
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@18.2.0",
+          "react-dom/client": "https://esm.sh/react-dom@18.2.0/client"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    
+    <script type="module">
+      import React from 'react';
+      import ReactDOM from 'react-dom/client';
+      
+      /**
+       * IMPORTANT: Ensure the filename here matches your React file exactly.
+       * If your file is named 'photo_guide.jsx', use './photo_guide.jsx'.
+       */
+      import App from './photo_guide.jsx';
+
+      const root = ReactDOM.createRoot(document.getElementById('root'));
+      root.render(
+        React.createElement(React.StrictMode, null, 
+          React.createElement(App)
+        )
+      );
+    </script>
+  </body>
+</html>
